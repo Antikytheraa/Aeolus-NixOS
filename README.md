@@ -1,5 +1,5 @@
 # Aeolus-NixOS
-This repository exists largely for me and me only, and is on github for convenience, however all of my dotfiles are here for manual installation if you want.
+This repository exists largely for me and me only, and is on github for convenience, however all of my dotfiles are here for manual installation if you want. I sincerely dont recommend anyone actually use this in its current state due to simply how unpolished it is
 
 **PREFACE**
 
