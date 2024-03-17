@@ -38,7 +38,7 @@ services.flatpak = {
       "com.discordapp.Discord" # Using the official discord client, vencord doesnt work with my theme.
       "com.bitwarden.desktop" # Bitwarden
       "ca.desrt.dconf-editor" # Dconf
-      "io.missioncenter.MissionCenter" # Better system monitor
+      #"io.missioncenter.MissionCenter" # Better system monitor # Society if flatpaks stopped randomly fucking working for me
       "com.protonvpn.www" # VPN
       "org.libreoffice.LibreOffice" # Office suite
       "io.github.alainm23.planify" # Todo list
