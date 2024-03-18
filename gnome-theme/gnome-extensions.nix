@@ -126,6 +126,7 @@ with lib.hm.gvariant;
       hotkeys-overlay-combo = "TEMPORARILY";
       intellihide = false;
       leftbox-padding = -1;
+      multi-monitors = false;
       panel-anchors = ''
         {"0":"MIDDLE","1":"MIDDLE"}
       '';

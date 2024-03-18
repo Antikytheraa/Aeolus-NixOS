@@ -16,10 +16,10 @@ with lib.hm.gvariant;
 
   gtk = {
     cursorTheme = {
-      package = bibata-cursors;
       name = "Bibata-Modern-Classic";
- }; 
-    
+      package = pkgs.bibata-cursors;
+    };
+
   theme = {
     name = "adw-gtk3-dark";
     package = pkgs.adw-gtk3;
@@ -32,13 +32,10 @@ with lib.hm.gvariant;
   };
 };
 
-
-
-
-
-
-
-
+  dconf.settings = {
+    "org/gnome/shell/extensions/user-theme" = {
+      name = "Marble-blue-dark";
+    };
+  };
 }
-
 

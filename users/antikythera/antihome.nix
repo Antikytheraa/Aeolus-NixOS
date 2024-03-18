@@ -21,7 +21,9 @@
     blackbox-terminal # Gtk4 Oneliner Terminal with theming support. Flatpak doesnt work for me.
     betterdiscordctl # Betterdiscord installer & updater
     gradience # GTK themer, flatpak is buggy for me.
-    gh
+    gh # Github
+    bibata-cursors # gnome-theme.nix doesnt want to retrieve the cursor package so I just specified it here
+    mission-center # Society if flatpaks didnt stop randomly working on me
     ];
   };
 

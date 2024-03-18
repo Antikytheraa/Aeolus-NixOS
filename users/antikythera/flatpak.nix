@@ -33,6 +33,7 @@ services.flatpak = {
       "net.lutris.Lutris" # Lutris
       "org.gnome.gThumb" # Photo viewer
       "com.spotify.Client" # Spotify. 
+      "dev.alextren.Spot" # Gtk spotify
       "io.github.TheWisker.Cavasik" # GUI Cava.
       "com.github.tchx84.Flatseal" # Flatpak permissions.
       "com.discordapp.Discord" # Using the official discord client, vencord doesnt work with my theme.

@@ -23,7 +23,7 @@
         
           modules = [
           ./configuration.nix
-          # nix-flatpak.nixosModules.nix-flatpak  
+           nix-flatpak.nixosModules.nix-flatpak  
           #./flatpak.nix
           home-manager.nixosModules.home-manager
           {
@@ -36,7 +36,6 @@
                ./gnome-theme/gnome-theme.nix # Anything that can generally be changed in gnome-tweaks or requires importing
                ./gnome-theme/gnome-extensions.nix # Gnome extensions
                ./gnome-theme/gnome-app-settings.nix # Gnome app themes/settings 
-               
             ];
           };
          }
