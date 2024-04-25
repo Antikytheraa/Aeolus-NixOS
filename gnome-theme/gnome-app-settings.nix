@@ -44,7 +44,8 @@ with lib.hm.gvariant;
       workspaces-only-on-primary = false;
     };
 
-  
+      # Apps  
+
       "org/gnome/nautilus/list-view" = {
       default-column-order = [ "name" "size" "type" "owner" "group" "permissions" "where" "date_modified" "date_modified_with_time" "date_accessed" "date_created" "recency" "detailed_type" ];
       default-visible-columns = [ "name" "size" "date_modified" ];
@@ -55,6 +56,13 @@ with lib.hm.gvariant;
       migrated-gtk-settings = true;
       search-filter-time-type = "last_modified";
     };
+     
+     "com/raggesilver/BlackBox" = {
+       cursor-blink-mode = mkUint32 0;
+       cursor-shape = mkUint32 1;
+       font = "FiraCode Nerd Font Medium 12";
+       terminal-padding = mkTuple [ (mkUint32 6) (mkUint32 6) (mkUint32 6) (mkUint32 6) ];
+    }; 
      
      "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,close";
