@@ -53,6 +53,8 @@ Tactile by lundal
 
 **OTHER**
 
+Dconf2nix, a convenient tool to convert dconf settings to nix code, maintainer is jtojnar.
+
 Gradience by Gradience team to theme GTK applications
 
 https://gist.github.com/taiwbi/0c33fa7afaa65d2a593e2f77fb3d4af6 This code to provide the blurry sidebars
