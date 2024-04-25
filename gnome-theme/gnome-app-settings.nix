@@ -1,11 +1,22 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 with lib.hm.gvariant;
 
 {
   xdg.configFile = {
-    "gradience/presets/user/aeolus.json".source = ./imports/aeolus.json;
+    "gradience/presets/user/aeolus.json".source = ./imports/aeolus.json; # Import a colorscheme
 };
+  
+  # Shell
+  programs.fish = {
+    enable = true; 
+    shellInit = "clear\nneofetch";
+  };
+  
+  programs.starship = {
+    enable = true;
+    settings = pkgs.lib.importTOML ./imports/starship.toml; # Import a toml file
+  };
  
   dconf.settings = {
              

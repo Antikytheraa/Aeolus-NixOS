@@ -4,7 +4,7 @@
   # bookmarking this https://nixos-and-flakes.thiscute.world/
 
   inputs = {
-    nix-software-center.url = "github:snowfallorg/nix-software-center"; # I keep these around, for whatever reason
+    nix-software-center.url = "github:snowfallorg/nix-software-center";
     nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     
@@ -22,19 +22,18 @@
         specialArgs.inputs = inputs;
         
           modules = [
-          ./configuration.nix
+           ./configuration.nix # system settings
            nix-flatpak.nixosModules.nix-flatpak  
-          #./flatpak.nix
-          home-manager.nixosModules.home-manager
+           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = inputs;
-              users."antikythera" = import ./users/antikythera/antihome.nix; # My user's home manager file
-              sharedModules = [ 
+              users."antikythera" = import ./users/antikythera/antihome.nix; # My user's home manager file, contains mostly packages
+              sharedModules = [ # Shared files for a universal theme
                ./gnome-theme/gnome-theme.nix # Anything that can generally be changed in gnome-tweaks or requires importing
-               ./gnome-theme/gnome-extensions.nix # Gnome extensions
+               ./gnome-theme/gnome-extensions.nix # Gnome extensions configered via dconf settings
                ./gnome-theme/gnome-app-settings.nix # Gnome app themes/settings 
             ];
           };

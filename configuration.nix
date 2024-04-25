@@ -32,6 +32,10 @@
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
+      extraPackages = with pkgs; [
+      rocm-opencl-icd
+      rocm-opencl-runtime
+      ];
     };
   };
 
@@ -61,6 +65,8 @@
   boot.plymouth.enable = true; 
   boot.initrd.verbose = false; 
   boot.kernelParams = [ "quiet" "udev.log_level=0" ];
+    # Kernel modules
+  boot.initrd.kernelModules = [ "amdgpu" ];
 
 
   # Misc Themes
@@ -118,6 +124,7 @@
     # Configure x11
   services.xserver.xkb.variant = "";
   services.xserver.xkb.layout = "us";
+  services.xserver.videoDrivers = [ "amdgpu" ];
     
     # Enable sound with pipewire.
   sound.enable = true;
@@ -147,30 +154,24 @@
 
   # Misc system packages
   environment.systemPackages = with pkgs; [
-    vim # Common Utils
+    vim # Common Utils/packages I want available for multiple users (not defined here)
     wget
     curl 
-    # inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor # GUI frontend for nix config editing. 
+    inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor # GUI frontend for nix config editing. 
     inputs.nix-software-center.packages.${system}.nix-software-center # GUI nix frontend
     libsForQt5.qt5ct # Configuration tool for qt5
     qt6Packages.qt6ct # Configuration tool for qt6
     libsForQt5.qtstyleplugin-kvantum # Kvantum for qt5
     qt6Packages.qtstyleplugin-kvantum # Kvantum for qt6
-    #clapper # Used for a gnome extension I use called Hanabi, animated wallpaper on gnome. Needs clappersink. 
+    clapper # Used for a gnome extension I use called Hanabi, animated wallpaper on gnome. Needs clappersink. 
     adw-gtk3 # Gtk theme
     inter # Font
-    # bitwarden # Password manager
-    # gradience # Changes libadwatia colorscheme
-    # polychromatic # Razer configuration app. 
-    # mission-center # Gnome usage but cooler. flatpak version doesnt work. 
-    #spicetify-cli # Spotify client editor
     gtop # Needed for another extension
     gnome-menus # Needed for extension.
     gnomeExtensions.arcmenu # Gnome doesnt like the extension, you might have to install it as a package 
     nerdfonts # Nerdfonts
-    pkgs.starship # Starship
-    # blackbox-terminal # Pretty GTK terminal
-    pkgs.mangohud #FPS counter
+    starship # Starship
+    mangohud #FPS counter
   ];
   
   # Steam. 

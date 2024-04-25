@@ -1,0 +1,22 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Set colors
+palette = 'aeolus'
+
+# Define colors
+[palettes.aeolus]
+shellthemeblue = '#384F67'
+errorred = '#f10037'
+
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[ ](shellthemeblue)' # Sets the prompt to the Nix logo
+error_symbol = '[ ](errorred)'
+
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
